@@ -39,6 +39,20 @@ SQL문 작성 규칙에 대해 알아보겠습니다. 👍 이 표시된 규칙�
 ```
 
 권장 규칙은 SQL 사용자들 사이에서 암묵적으로 지켜지는 규칙일 뿐이므로 편하게 작성하면 됩니다.
+다만 표준 관리와 가독성 면에서는 가능하면 규칙을 준수하는 것이 좋습니다.
+
+__EX)__
+
+```
+  SELECT *   
+  FROM     employees A,
+    (
+       SELECT *
+       FROM departments
+       WHERE department_id = 20
+    ) B
+ WHERE  A.department_id = B.department_id;
+```  
 
 
 
