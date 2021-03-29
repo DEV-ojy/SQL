@@ -185,4 +185,27 @@ FROM employees;
 데이터를 사전에 가공하거나 리포트를 작성할 목적으로 데이터 값끼리 계산하려면 산술 연산자를 사용해야 합니다
 
 #### 산술 연산자
+산술 연산자는 데이터 값을 계산하고자 할 때 사용합니다 산술 표현식에느 열 이름,숫자,날짜, 산술 연산자 등을 포함할 수 있으며
+산술 연산자에는 + ,- ,* ,/  가 있습니다 SELECT문에스는 FROM 절을 제외한 모든 절에서 산술 연산자를 사용할수있습니다
+수학의 일반적인 계산과 마찬가지로 연산의 우선순위는 (), * ,/ ,+ ,-순 입니다
 
+ex: employees 테이블에서 employee_id, salary, salary에 500을 더한 값,100을 뺀 값 10%를 추가해서 2로 나눈 값을 출력하세요
+```
+SELECT employed_id, salary, salary+500, salary-100, (salary*1.1)/2
+FROM employees;
+```
+
+>이 예제는 employees테이블에 있는 employee_id의 각 salary 데이터 값에 대해 더하기,빼기,곱하기,나누기를 한 것입니다
+>마지막 열에 들어갈 곱하기와 나누기 구문은 소괄호(( ))를 이용하여 연산의 우선순위를 지정했습니다 즉 1.1을 곱한 후 2로 나눴습니다
+
+**앞에서 배운 별칭을 적용하여 다음과 같이 응용할수있습니다**
+
+ex: employees에서 employee_id를 '사원번호', salary를 '급여', salary+500를 '추가급여',salary-100를 '인하급여' (salary*1.1)/2를 '조정급여'
+```
+SELECT employed_id AS 사원번호,
+       salary AS 급여,
+       salary+500 AS 추가급여,
+       salary-100 AS 인하급여,
+       (salary*1.1)/2 AS 조정급여
+FROM employees;
+```
