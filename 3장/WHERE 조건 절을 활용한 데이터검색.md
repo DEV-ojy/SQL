@@ -182,6 +182,9 @@ NOT 연산자는 조건을 부정으로 만드는 역할을 하기 때문에 부
 ||IS NOT NULL|null 값을 갖지 않는다|
 
 
-
-
-
+ex: employees테이블에서 employee_id가 105가 아닌 직원을 조회해 보세요)
+```
+SELECT *
+FROM employeeS
+WEERE employee_id <>105;
+```
